@@ -61,7 +61,6 @@ public class CategoriaServicoApi {
 
     @PUT
     @Path("/{id}")
-    @Consumes(APPLICATION_JSON)
     public void atualizar(@PathParam("id") Long id, CategoriaServicoDto categoria) {
         if (service.listar(id).isEmpty()) {
             throw new NotFoundException("ID inexistente");

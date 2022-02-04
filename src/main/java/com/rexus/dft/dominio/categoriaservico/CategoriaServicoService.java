@@ -7,6 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.exception.ConstraintViolationException;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.NotFoundException;
 import java.util.Collections;
@@ -54,25 +55,27 @@ public class CategoriaServicoService {
         return repository.findByIdOptional(id).map(mapper::toDto);
     }
 
+    @Transactional
     public void salvar(CategoriaServicoDto categoria) {
         CategoriaServico entity = mapper.toEntity(categoria);
         if (categoria.getId() != null) {
-            CategoriaServicoDto dto = listar(categoria.getId())
-        	    .orElseThrow(() -> new RuntimeException("Categoria não encontrada"));
-            entity = mapper.toEntity(dto);
+            entity = repository.findByIdOptional(categoria.getId())
+        	        .orElseThrow(() -> new RuntimeException("Categoria não encontrada"));
         }
 
-        entity.setDescricao(categoria.getDescricao());
-        entity.setTipo(categoria.getTipo());
+        entity.descricao = categoria.getDescricao();
+        entity.tipo = categoria.getTipo();
         repository.persist(entity);
     }
 
-    public void excluir(Long id) {
+    @Transactional
+    public void excluir(long id) {
         CategoriaServico categoria = repository
                 .findByIdOptional(id)
                 .orElseThrow(() -> new NotFoundException("Categoria inexistente"));
         try {
             repository.delete(categoria);
+            repository.flush();
         } catch (Exception e) {
             if (e.getCause() instanceof ConstraintViolationException) {
                 throw new InternalServerErrorException("Categoria em uso e não pode ser excluída");

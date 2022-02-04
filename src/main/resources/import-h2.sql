@@ -1,0 +1,15 @@
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 1', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 2', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 3', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 4', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 5', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 6', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 7', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 8', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 9', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 10', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 11', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 12', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 13', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 14', 'T');
+INSERT INTO tb_categoria_servico (ds_categoria_servico, tp_metodologia) VALUES ('Categoria 15', 'T');

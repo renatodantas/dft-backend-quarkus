@@ -13,43 +13,19 @@ public class CategoriaServico {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_categoria_servico", nullable = false)
-    private Long id;
+    public Long id;
 
-    @Column(name = "ds_categoria_servico")
-    private String descricao;
+    @Column(name = "ds_categoria_servico", nullable = false)
+    public String descricao;
 
+    @Column(name = "tp_metodologia", nullable = false, length = 1)
     @Convert(converter = TipoMetodologiaEnumConverter.class)
-    @Column(name = "tp_metodologia")
-    private TipoMetodologiaEnum tipo;
+    public TipoMetodologiaEnum tipo;
 
     public CategoriaServico() {}
 
     public CategoriaServico(String descricao, TipoMetodologiaEnum tipo) {
         this.descricao = descricao;
-        this.tipo = tipo;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public TipoMetodologiaEnum getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(TipoMetodologiaEnum tipo) {
         this.tipo = tipo;
     }
 
@@ -69,6 +45,6 @@ public class CategoriaServico {
         if (o == null || getClass() != o.getClass())
             return false;
         CategoriaServico that = (CategoriaServico) o;
-        return id.equals(that.id);
+        return Objects.equals(id, that.id);
     }
 }

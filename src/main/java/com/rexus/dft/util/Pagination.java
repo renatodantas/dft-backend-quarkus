@@ -11,7 +11,7 @@ import static io.quarkus.panache.common.Sort.Direction.Descending;
 public class Pagination {
 
     private static final int DEFAULT_PAGE_NUMBER = 0;
-    private static final int DEFAULT_PAGE_SIZE = 10;
+    private static final int DEFAULT_PAGE_SIZE = 100;
     private static final Sort.Direction DEFAULT_SORT_ORDER = Ascending;
 
     /** Atributo para ordenação */
